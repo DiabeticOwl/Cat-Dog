@@ -31,7 +31,7 @@ app.layout = html.Div([
     html.Br(),
     html.Div([
         html.H4(children='Image preview:'),
-        html.Img(id='image-preview', src='', style={'width': '400px', 'height': '400px'}),
+        html.Img(id='image-preview', src='', style={'width': '400px', 'height': '400px'}, alt='No Image Found'),
         html.H4(id='prediction', children='I think this is a... ')
     ])
 ])
