@@ -18,15 +18,27 @@ server = app.server
 
 app.layout = html.Div([
     html.Div([
-        html.H3(children="Hello :D! I'd like to try and guess if you show me a dog or a cat..."),
-        dcc.Input(
-            id='input-url',
-            placeholder='Enter the direct url to the image...',
-            value='https://img00.deviantart.net/b207/i/2008/354/8/2/the_50_50_cat_hd_pic_by_deakablackdragon.jpg',
-            style={'width': '50%', 'height': '100%'}
-        ),
-        html.Button(id='submit-button', n_clicks=0, children='Press me and let me guess.',
-                    style={'font-size': '14px', 'marginLeft': 10})
+        html.H3(children="Hello :D! I'd like to try and guess if you show me a dog or a cat..."),  
+        html.Div([
+            html.Div([
+                dcc.Input(
+                    id='input-url',
+                    placeholder='Enter the direct url to the image...',
+                    value='https://img00.deviantart.net/b207/i/2008/354/8/2/the_50_50_cat_hd_pic_by_deakablackdragon.jpg',
+                    style={'width': '60%'}
+                ),
+            ]),
+            html.Br(),
+            html.Div([            
+                html.Button(id='submit-button', n_clicks=0, children='Press me and let me guess.',
+                            style={'font-size': '14px', 'marginLeft': 10}),
+                html.A(
+                    children=html.Button(children='Source in GitHub', style={'font-size': '14px', 'marginLeft': 10}),
+                    href='https://github.com/diabetichunny/Cat-Dog',
+                    target='_blank'
+                )
+            ], style={'display': 'inline-block'})   
+        ]),
     ]),
     html.Br(),
     html.Div([
@@ -34,7 +46,7 @@ app.layout = html.Div([
         html.Img(id='image-preview', src='', style={'width': '400px', 'height': '400px'}, alt='No Image Found'),
         html.H4(id='prediction', children='I think this is a... ')
     ])
-])
+], style={'text-align': 'center'})
 
 
 @app.callback(Output('image-preview', 'src'), [Input('input-url', 'value')])
@@ -67,4 +79,4 @@ app.css.append_css({
 })
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server()
