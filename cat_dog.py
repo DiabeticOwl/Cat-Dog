@@ -46,7 +46,7 @@ app.layout = html.Div([
         html.Img(id='image-preview', src='', style={'width': '400px', 'height': '400px'}, alt='No Image Found'),
         html.H4(id='prediction', children='I think this is a... ')
     ])
-], style={'text-align': 'center'}, className='five.columns')
+], className='six.columns')
 
 
 @app.callback(Output('image-preview', 'src'), [Input('input-url', 'value')])
