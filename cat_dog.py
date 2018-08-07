@@ -25,12 +25,12 @@ app.layout = html.Div([
                     id='input-url',
                     placeholder='Enter the direct url to the image...',
                     value='https://img00.deviantart.net/b207/i/2008/354/8/2/the_50_50_cat_hd_pic_by_deakablackdragon.jpg',
-                    style={'width': '60%'}
+                    style={'width': '600px'}
                 ),
             ]),
             html.Br(),
             html.Div([            
-                html.Button(id='submit-button', n_clicks=0, children='Press me and let me guess.',
+                html.Button(id='submit-button', n_clicks=0, children='Press me and let me guess',
                             style={'font-size': '14px', 'marginLeft': 10}),
                 html.A(
                     children=html.Button(children='Source in GitHub', style={'font-size': '14px', 'marginLeft': 10}),
@@ -46,7 +46,7 @@ app.layout = html.Div([
         html.Img(id='image-preview', src='', style={'width': '400px', 'height': '400px'}, alt='No Image Found'),
         html.H4(id='prediction', children='I think this is a... ')
     ])
-], style={'text-align': 'center'}, className='seven.columns')
+], style={'text-align': 'center'}, className='six.columns')
 
 
 @app.callback(Output('image-preview', 'src'), [Input('input-url', 'value')])
