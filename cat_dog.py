@@ -11,7 +11,7 @@ from PIL import Image
 
 # Initializing model.
 model = load_model('cd_model.h5')
-model._make_predict_function()
+model.make_predict_function()
 
 app = dash.Dash()
 server = app.server
@@ -34,7 +34,7 @@ app.layout = html.Div([
                             style={'font-size': '14px', 'marginLeft': 10}),
                 html.A(
                     children=html.Button(children='Source in GitHub', style={'font-size': '14px', 'marginLeft': 10}),
-                    href='https://github.com/diabetichunny/Cat-Dog',
+                    href='https://github.com/diabeticowl/Cat-Dog',
                     target='_blank'
                 )
             ], style={'display': 'inline-block'})   
