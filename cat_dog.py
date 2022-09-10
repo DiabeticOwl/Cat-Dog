@@ -1,9 +1,8 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
 import numpy as np
 import requests
 
+from dash import dcc, html
 from dash.dependencies import Input, Output, State
 from io import BytesIO
 from keras.models import load_model
