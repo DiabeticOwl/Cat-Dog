@@ -1,1 +1,1 @@
-web: gunicorn cat_dog:server
+web: gunicorn cat_dog.py
